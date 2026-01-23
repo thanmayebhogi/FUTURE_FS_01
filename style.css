@@ -78,8 +78,8 @@ body {
 }
 
 .home-image img {
-  width: 100%;
-  height: 100%;
+  width: 50%;
+  height: 50%;
   border-radius: 50%;
   border: 5px solid white;
   object-fit: contain;
