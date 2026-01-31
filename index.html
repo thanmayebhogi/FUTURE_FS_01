@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Gifts | LoveStore</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Love<span class="highlight">Store</span> <i class="fa-solid fa-heart"></i></a>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#products">Gifts</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" id="login-link">Login</a></li>
+            </ul>
+            <div class="cart-icon" id="cart-btn">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="badge" id="cart-count">0</span>
+            </div>
+            <div class="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Make This Valentine's <br><span>Unforgettable</span></h1>
+            <p>Find the perfect gift for your special someone. Handpicked teddy bears, premium chocolates, and more.</p>
+            <a href="#products" class="btn-primary">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="hero-image">
+            <!-- Placeholder for a hero image, represented by css styling or a div for now -->
+            <div class="heart-shape"></div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products-section">
+        <h2 class="section-title">Curated With Love</h2>
+        <p class="section-subtitle">Best sellers for this season</p>
+
+        <div class="product-grid" id="product-grid">
+            <!-- Products will be injected here by JS -->
+        </div>
+    </section>
+
+    <!-- Cart / Payment Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+
+            <!-- Cart View -->
+            <div id="cart-view">
+                <h2>Your Bag of Love</h2>
+                <div id="cart-items-container">
+                    <!-- Cart items will be injected here -->
+                    <p class="empty-cart-msg">Your cart is empty.</p>
+                </div>
+                <div class="cart-summary">
+                    <p class="total-amount">Total: <span id="cart-total">$0.00</span></p>
+                    <button class="btn-primary" id="proceed-btn">Proceed to Pay <i
+                            class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- Payment View (Hidden initially) -->
+            <div id="payment-view" style="display: none;">
+                <h2>Scan to Pay</h2>
+                <p>Complete your purchase by scanning the QR code below.</p>
+                <div class="qr-container">
+                    <!-- Using a placeholder QR code image -->
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=LoveStorePayment"
+                        alt="Payment QR Code">
+                </div>
+                <p class="total-amount">Pay: <span id="payment-total">$0.00</span></p>
+                <div class="modal-actions">
+                    <button class="btn-secondary" id="back-to-cart-btn"><i class="fa-solid fa-arrow-left"></i>
+                        Back</button>
+                    <button class="btn-primary" onclick="finishPayment()">Confirm Payment <i
+                            class="fa-solid fa-check"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content login-content">
+            <span class="close-modal close-login">&times;</span>
+            <h2>Welcome Back</h2>
+            <p>Login to your account to continue</p>
+            <form id="login-form">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="btn-primary">Login</button>
+                <div class="form-footer">
+                    <p>Don't have an account? <a href="#">Sign up</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Contact / Footer -->
+    <footer id="contact" class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>LoveStore</h3>
+                <p>Spreading joy and love, one gift at a time.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="#home">Home</a>
+                <a href="#products">Products</a>
+                <a href="#">Shipping Policy</a>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 LoveStore. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
